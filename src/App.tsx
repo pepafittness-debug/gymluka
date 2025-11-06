@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-white border-b-2 border-red-600">
+      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b-2 border-red-600">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img

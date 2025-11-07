@@ -16,10 +16,10 @@ function App() {
               className="h-20 w-auto"
             />
           </div>
-          <nav className="hidden md:flex gap-8 text-gray-900 font-semibold text-lg">
-            <a href="#uvod" className="hover:text-red-600 transition">ÚVOD</a>
-            <a href="#info" className="hover:text-red-600 transition">INFORMACE</a>
-            <a href="#galerie" className="hover:text-red-600 transition">FOTKY</a>
+          <nav className="hidden md:flex gap-8 text-red-600 font-semibold text-lg">
+            <a href="#uvod" className="hover:text-red-400 transition">ÚVOD</a>
+            <a href="#info" className="hover:text-red-400 transition">INFORMACE</a>
+            <a href="#galerie" className="hover:text-red-400 transition">FOTKY</a>
           </nav>
         </div>
       </header>

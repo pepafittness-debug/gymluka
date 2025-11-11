@@ -4,6 +4,14 @@ import { useState } from 'react';
 function App() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
+  const galleryImages = [
+    '/Screenshot_2025-10-28-18-53-08-113_com.facebook.katana-edit.jpg',
+    '/Screenshot_2025-10-28-18-52-16-498_com.facebook.katana-edit (1).jpg',
+    '/Screenshot_2025-10-28-18-52-16-498_com.facebook.katana-edit.jpg',
+    '/Screenshot_2025-10-28-18-49-55-716_com.facebook.katana-edit.jpg',
+    '/Screenshot_2025-10-28-18-51-15-703_com.instagram.android-edit.jpg',
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -316,13 +324,17 @@ function App() {
             Fotky fitness vybavení a prostorů
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
-            {[...Array(10)].map((_, i) => (
+            {galleryImages.map((image, i) => (
               <button
                 key={i}
                 onClick={() => setSelectedImage(i)}
-                className="aspect-square bg-gray-100 border-2 border-red-600 flex items-center justify-center hover:border-red-700 transition-all duration-300 hover:scale-105 cursor-pointer"
+                className="aspect-square bg-gray-100 border-2 border-red-600 overflow-hidden hover:border-red-700 transition-all duration-300 hover:scale-105 cursor-pointer"
               >
-                <span className="text-gray-500 text-sm">Fotka {i + 1}</span>
+                <img
+                  src={image}
+                  alt={`Fotka ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </button>
             ))}
           </div>
@@ -342,9 +354,11 @@ function App() {
             <X className="w-10 h-10" />
           </button>
           <div className="relative max-w-5xl w-full">
-            <div className="aspect-square bg-gray-100 border-4 border-red-600 flex items-center justify-center">
-              <span className="text-gray-400 text-2xl">Fotka {selectedImage + 1}</span>
-            </div>
+            <img
+              src={galleryImages[selectedImage]}
+              alt={`Fotka ${selectedImage + 1}`}
+              className="w-full h-auto border-4 border-red-600"
+            />
           </div>
         </div>
       )}
